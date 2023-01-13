@@ -1,12 +1,13 @@
-# require './lib/employee'
+require './lib/employee'
 # require './lib/department'
 
-class Budget
-  attr_reader :year, :departments
+class Budget < Employee
+  attr_reader :year, :departments, :employees
 
   def initialize(year)
     @year = year
     @departments = []
+    @employees = []
   end
 
   def add_departments(department)
@@ -22,7 +23,14 @@ class Budget
     low_budg
   end
 
+  def add_employees(employee)
+    @employees.push(employee)
+  end
+
   def employee_salaries
-    
+    salaries = employees.map do |employee|
+              employee.salary
+    end
+    salaries
   end
 end
