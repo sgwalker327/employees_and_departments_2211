@@ -9,6 +9,6 @@ class Employee
   end
 
   def give_raise(raise)
-    salary += raise
+    @salary += raise
   end
 end

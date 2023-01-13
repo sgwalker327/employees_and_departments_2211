@@ -1,5 +1,4 @@
 require './lib/employee'
-# require './lib/department'
 
 class Budget < Employee
   attr_reader :year, :departments, :employees

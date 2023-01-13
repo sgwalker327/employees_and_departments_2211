@@ -3,7 +3,7 @@ require './lib/department'
 require './lib/budget'
 
 RSpec.describe Budget do
-  let(:soc_budget_2007) { Budget.new(2007)}
+  let(:soc_budget_2007) { Budget.new(2007) }
   let(:customer_service) { Department.new("Customer Service") }
   let(:bobbi) { Employee.new({name: "Bobbi Jaeger", age: "30", salary: "$100000"}) }
   let(:aaron) { Employee.new({name: "Aaron Tanaka", age: "25", salary: "90000"}) }
@@ -44,7 +44,6 @@ RSpec.describe Budget do
       soc_budget_2007.add_employees(bobbi)
       soc_budget_2007.add_employees(aaron)
       bobbi.give_raise(5000)
-
       expect(soc_budget_2007.employee_salaries).to eq([105000, 90000])
     end
   end
