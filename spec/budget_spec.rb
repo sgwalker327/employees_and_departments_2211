@@ -31,9 +31,21 @@ RSpec.describe Budget do
     end
   end
 
+  describe '#add_employees' do
+    it 'can add employees to budget' do
+      soc_budget_2007.add_employees(bobbi)
+      soc_budget_2007.add_employees(aaron)
+      expect(soc_budget_2007.employees).to eq([bobbi, aaron])
+    end
+  end
+
   describe '#employee_salaries' do
     it 'can return a list of employee_salaries' do
-      
+      soc_budget_2007.add_employees(bobbi)
+      soc_budget_2007.add_employees(aaron)
+      bobbi.give_raise(5000)
+
+      expect(soc_budget_2007.employee_salaries).to eq([105000, 90000])
     end
   end
 end
